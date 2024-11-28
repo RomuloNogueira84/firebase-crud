@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase"; // Ajustado para refletir o caminho correto
+import { db } from "../firebase"; 
 
 function PostForm({ fetchPosts }) {
   const [title, setTitle] = useState("");
@@ -28,7 +28,7 @@ function PostForm({ fetchPosts }) {
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      <button type="submit">Add Post</button>
+      <button type="submit">Adicionar postagem</button>
     </form>
   );
 }

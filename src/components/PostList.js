@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { db } from "../firebase"; // Ajustado para refletir o caminho correto
-
+import { db } from "../firebase"; 
 function PostList({ posts, fetchPosts }) {
   const [editingId, setEditingId] = useState(null);
   const [editingTitle, setEditingTitle] = useState("");
@@ -41,8 +40,8 @@ function PostList({ posts, fetchPosts }) {
                 value={editingContent}
                 onChange={(e) => setEditingContent(e.target.value)}
               />
-              <button onClick={() => handleUpdate(post.id)}>Save</button>
-              <button onClick={() => setEditingId(null)}>Cancel</button>
+              <button onClick={() => handleUpdate(post.id)}>Salvar</button>
+              <button onClick={() => setEditingId(null)}>Cancelar</button>
             </>
           ) : (
             <>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
-import PostForm from "./components/PostForm"; // Corrigido para refletir a estrutura correta
-import PostList from "./components/PostList"; // Corrigido para refletir a estrutura correta
+import PostForm from "./components/PostForm"; 
+import PostList from "./components/PostList"; 
+import Banner from "./components/Banner/Banner";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -15,11 +16,14 @@ function App() {
 
   useEffect(() => {
     fetchPosts();
-  }, []); // Adicionando fetchPosts às dependências vazias
+  }, []); 
 
   return (
     <div className="App">
-      <h1>React Firebase CRUD</h1>
+      <Banner/>
+      <h1>Projeto CRUD com Firebase</h1>
+      <h2>Crie um novo post</h2>
+      <p>Clique no botão abaixo para criar um novo post</p>
       <PostForm fetchPosts={fetchPosts} />
       <PostList posts={posts} fetchPosts={fetchPosts} />
     </div>
